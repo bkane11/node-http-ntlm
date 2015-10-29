@@ -72,6 +72,10 @@ exports.method = function(method, options, callback){
 
 			// pass along other options:
 			type3options.headers = _.extend(type3options.headers, httpreqOptions.headers);
+			
+			// include options.headers passed in
+			type3options.headers = _.extend(type3options.headers, options.headers);
+			
 			type3options = _.extend(type3options, _.omit(httpreqOptions, 'headers'));
 
 			// send type3 message to server:
